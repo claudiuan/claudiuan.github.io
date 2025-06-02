@@ -1,0 +1,800 @@
+:root {
+  --primary-color: #D4AF37; /* Rich Gold */
+  --secondary-color: #888888; /* Smoky Gray */
+  --accent-color: #014421; /* Deep Emerald */
+  --text-color: #4B3621; /* Dark Wood */
+  --light-color: #FDFDFD; /* Ivory/White */
+  --dark-color: #014421; /* Deep Emerald */
+  --required-color: #e74c3c; /* Red for required fields */
+  --background-color: #FDFDFD; /* Ivory/White */
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  --input-border: #D4AF37; /* Rich Gold */
+  --input-background: #FDFDFD; /* Ivory/White */
+  --countdown-background: rgba(253, 253, 253, 0.85); /* Ivory/White with transparency */
+  --gold-accent: #D4AF37; /* Rich Gold */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-color);
+  background-color: var(--light-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+  text-align: center;
+  padding: 100px 20px;
+  background-color: var(--light-color);
+  background-image: linear-gradient(rgba(253, 253, 253, 0.8), rgba(253, 253, 253, 0.8)), url('https://images.unsplash.com/photo-1511795409834-432f578453e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  color: var(--dark-color);
+}
+
+.names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 7rem; /* Increased from 6rem */
+  margin-bottom: 15px;
+  color: var(--accent-color);
+  text-shadow: 2px 2px 4px rgba(212, 175, 55, 0.4);
+  letter-spacing: 2px;
+}
+
+.date {
+  font-size: 2.5rem; /* Increased from 2.2rem */
+  margin-bottom: 25px;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.announcement {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4rem; /* Increased from 3.5rem */
+  color: var(--primary-color);
+  text-shadow: 2px 2px 4px rgba(1, 68, 33, 0.2);
+  margin-top: 10px;
+}
+
+/* Video Section */
+.video-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: var(--background-color);
+}
+
+.video-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 = 0.5625 or 56.25%) */
+  overflow: hidden;
+  border: 3px solid var(--primary-color);
+  border-radius: 8px;
+}
+
+#couple-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  object-fit: cover;
+}
+
+/* Intro Section */
+.intro-text {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.intro-heading {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.2rem;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(212, 175, 55, 0.2);
+}
+
+.intro-parents-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  gap: 60px;
+}
+
+.intro-parent-group {
+  text-align: center;
+}
+
+.intro-parent-names {
+  font-weight: 500;
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.intro-parent-surname {
+  font-weight: 500;
+  color: var(--accent-color);
+  font-size: 1.7rem;
+  margin-bottom: 15px;
+}
+
+.intro-godparents {
+  font-weight: 500;
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  margin: 15px 0;
+}
+
+.intro-couple {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.8rem;
+  color: var(--primary-color);
+  margin: 20px 0;
+  text-shadow: 1px 1px 2px rgba(1, 68, 33, 0.2);
+}
+
+/* Photo Section */
+.photo-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: var(--light-color);
+}
+
+.new-photo-section {
+  background-color: var(--light-color);
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.second-photo-section {
+  background-color: var(--background-color);
+}
+
+.couple-photo-section {
+  background-color: var(--background-color);
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.photo-container {
+  max-width: 800px;
+  margin: 30px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  border: 3px solid var(--primary-color);
+}
+
+.featured-photo {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.photo-container:hover .featured-photo {
+  transform: scale(1.03);
+}
+
+.photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(1, 68, 33, 0.7);
+  color: var(--light-color);
+  padding: 15px;
+  text-align: center;
+  font-size: 1.3rem; /* Increased from 1.1rem */
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.photo-container:hover .photo-caption {
+  transform: translateY(0);
+}
+
+/* Family Section */
+.family-section {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: var(--background-color);
+}
+
+.family-box {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: var(--light-color);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--primary-color);
+}
+
+.family-box p {
+  margin-bottom: 10px;
+  font-size: 1.4rem; /* Increased from 1.2rem */
+}
+
+.family-intro {
+  font-size: 1.6rem; /* Increased from 1.4rem */
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.parents-container, .godparents-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  gap: 60px; /* Increased space between parent groups */
+}
+
+.godparents-container {
+  margin-top: 10px;
+}
+
+.parent-group {
+  text-align: center;
+}
+
+.parent-names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.8rem; /* Increased from 2.3rem */
+  color: var(--accent-color);
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 2px rgba(212, 175, 55, 0.3);
+}
+
+.parent-surname {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem; /* Increased from 2.5rem */
+  color: var(--primary-color);
+  text-shadow: 1px 1px 2px rgba(1, 68, 33, 0.2);
+}
+
+.family-names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.8rem; /* Increased from 2.3rem */
+  color: var(--accent-color);
+  margin: 15px 0;
+  text-shadow: 1px 1px 2px rgba(212, 175, 55, 0.3);
+}
+
+/* Section Styles */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.intro {
+  background-color: var(--background-color);
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.2rem; /* Increased from 2.8rem */
+  margin-bottom: 20px;
+  color: var(--accent-color);
+  font-weight: normal;
+  text-shadow: 1px 1px 3px rgba(212, 175, 55, 0.2);
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.3rem; /* Increased from 2rem */
+  margin-bottom: 20px;
+  color: var(--accent-color);
+}
+
+p {
+  margin-bottom: 15px;
+  font-size: 1.3rem; /* Increased from 1.1rem */
+}
+
+.ornament {
+  font-size: 2.8rem; /* Increased from 2.5rem */
+  color: var(--primary-color);
+  margin: 30px 0;
+}
+
+/* Details Section */
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  background-color: var(--light-color);
+}
+
+.detail-box {
+  flex: 1;
+  min-width: 250px;
+  max-width: 400px;
+  padding: 30px;
+  background-color: var(--background-color);
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--primary-color);
+}
+
+.detail-box p {
+  font-size: 1.4rem; /* Increased from 1.2rem */
+}
+
+/* Clinking Glasses Animation */
+.party-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.clinking-glasses {
+  margin-left: 5px;
+  width: 45px; /* Increased from 40px */
+  height: 45px; /* Increased from 40px */
+}
+
+.glass-left {
+  animation: clink-left 2s infinite;
+  transform-origin: bottom right;
+}
+
+.glass-right {
+  animation: clink-right 2s infinite;
+  transform-origin: bottom left;
+}
+
+@keyframes clink-left {
+  0%, 100% { transform: rotate(0); }
+  45% { transform: rotate(-10deg); }
+  50% { transform: rotate(-15deg); }
+  55% { transform: rotate(-10deg); }
+}
+
+@keyframes clink-right {
+  0%, 100% { transform: rotate(0); }
+  45% { transform: rotate(10deg); }
+  50% { transform: rotate(15deg); }
+  55% { transform: rotate(10deg); }
+}
+
+/* Countdown Section */
+.countdown-section {
+  background-color: var(--light-color);
+  background-image: linear-gradient(var(--countdown-background), var(--countdown-background)), url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.countdown-box {
+  background-color: var(--background-color);
+  border-radius: 8px;
+  padding: 20px;
+  min-width: 140px; /* Increased from 120px */
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--primary-color);
+}
+
+.countdown-value {
+  font-size: 3.6rem; /* Increased from 3.2rem */
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.countdown-label {
+  font-size: 1.3rem; /* Increased from 1.1rem */
+  color: var(--text-color);
+  margin-top: 5px;
+}
+
+/* RSVP Section */
+.rsvp-section {
+  background-color: var(--background-color);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: var(--dark-color);
+  font-size: 1.3rem; /* Increased from 1.1rem */
+}
+
+.required {
+  color: var(--required-color);
+}
+
+.form-note {
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto 20px;
+  font-size: 1.1rem; /* Increased from 0.9rem */
+  color: var(--text-color);
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 14px; /* Increased from 12px */
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem; /* Increased from 1.1rem */
+  background-color: var(--input-background);
+  color: var(--text-color);
+}
+
+input:required, select:required, textarea:required {
+  border-left: 3px solid var(--primary-color);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 5px rgba(1, 68, 33, 0.3);
+}
+
+/* Checkbox styling */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+  transform: scale(1.3); /* Make checkbox bigger */
+}
+
+.checkbox-group label {
+  display: inline;
+  margin-bottom: 0;
+}
+
+.btn {
+  background-color: var(--accent-color);
+  color: var(--light-color);
+  border: none;
+  padding: 16px 36px; /* Increased from 14px 32px */
+  font-size: 1.3rem; /* Increased from 1.1rem */
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+
+/* Footer Styles */
+footer {
+  background-color: var(--secondary-color);
+  padding: 40px 20px 0;
+  text-align: center;
+  color: var(--light-color);
+}
+
+footer p {
+  font-size: 1.3rem; /* Increased from base size */
+}
+
+.contact-info {
+  margin: 20px 0;
+  line-height: 1.8;
+}
+
+footer a {
+  color: var(--gold-accent);
+  text-decoration: none;
+  font-size: 1.3rem; /* Increased from base size */
+  font-weight: 500;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+
+/* Copyright Bar */
+.copyright-bar {
+  margin-top: 30px;
+  padding: 10px;
+  background-color: rgba(1, 68, 33, 0.8);
+  font-size: 1rem; /* Increased from 0.8rem */
+  color: var(--light-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .names {
+    font-size: 5rem; /* Increased from 4.5rem */
+  }
+  
+  .date {
+    font-size: 2rem; /* Increased from 1.8rem */
+  }
+  
+  .announcement {
+    font-size: 2.8rem; /* Increased from 2.5rem */
+  }
+  
+  h1 {
+    font-size: 2.6rem; /* Increased from 2.3rem */
+  }
+  
+  h2 {
+    font-size: 2.1rem; /* Increased from base size */
+  }
+  
+  p {
+    font-size: 1.2rem; /* Adjusted for mobile */
+  }
+  
+  .intro-parent-names, .intro-godparents {
+    font-size: 1.3rem;
+  }
+  
+  .intro-parent-surname {
+    font-size: 1.5rem;
+  }
+  
+  .intro-couple {
+    font-size: 2.4rem;
+  }
+  
+  .intro-parents-container {
+    gap: 30px;
+  }
+  
+  .intro-heading {
+    font-size: 2.6rem;
+  }
+  
+  header {
+    padding: 60px 20px;
+    order: 2;
+  }
+  
+  .video-section {
+    padding: 0;
+    order: 1;
+  }
+  
+  .video-container {
+    max-width: 100%;
+    padding-top: 56.25%; /* Maintain 16:9 aspect ratio */
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  
+  #couple-video {
+    border-radius: 0;
+  }
+  
+  .container {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Reset container padding only for sections other than video */
+  section:not(.video-section) .container,
+  header .container,
+  footer .container {
+    padding: 0 20px;
+  }
+  
+  .new-photo-section {
+    order: 3;
+    padding: 30px 20px;
+  }
+  
+  .couple-photo-section {
+    order: 4;
+    padding: 30px 20px;
+  }
+  
+  .intro {
+    order: 5;
+  }
+  
+  .photo-section:not(.second-photo-section):not(.couple-photo-section):not(.new-photo-section) {
+    order: 6;
+    padding: 40px 20px;
+  }
+  
+  .family-section {
+    order: 7;
+    padding: 30px 20px;
+  }
+  
+  .family-box {
+    padding: 20px;
+  }
+  
+  .parent-names {
+    font-size: 2.3rem; /* Increased from 2rem */
+  }
+  
+  .parent-surname {
+    font-size: 2.5rem; /* Increased from 2.2rem */
+  }
+  
+  .family-names {
+    font-size: 2.3rem; /* Increased from 2rem */
+  }
+  
+  .details {
+    order: 8;
+  }
+  
+  .second-photo-section {
+    order: 9;
+    padding: 40px 20px;
+  }
+  
+  .countdown-section {
+    order: 10;
+    padding: 40px 20px;
+  }
+  
+  .rsvp-section {
+    order: 11;
+  }
+  
+  footer {
+    order: 12;
+  }
+  
+  .photo-container {
+    max-width: 100%;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  
+  .countdown-box {
+    min-width: 90px; /* Increased from 80px */
+    padding: 15px 10px;
+  }
+  
+  .countdown-value {
+    font-size: 2.5rem; /* Increased from 2.2rem */
+  }
+  
+  .countdown-label {
+    font-size: 1.2rem; /* Increased from 1rem */
+  }
+  
+  .clinking-glasses {
+    width: 35px; /* Increased from 30px */
+    height: 35px; /* Increased from 30px */
+  }
+  
+  .parents-container, .godparents-container {
+    gap: 30px; /* Reduced gap for mobile */
+  }
+  
+  label, input, select, textarea, .btn {
+    font-size: 1.2rem; /* Adjusted for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .names {
+    font-size: 4.2rem; /* Increased from 3.8rem */
+  }
+  
+  .date {
+    font-size: 1.8rem; /* Increased from 1.6rem */
+  }
+  
+  .announcement {
+    font-size: 2.5rem; /* Increased from 2.2rem */
+  }
+  
+  .intro-parent-names, .intro-godparents {
+    font-size: 1.1rem;
+  }
+  
+  .intro-parent-surname {
+    font-size: 1.3rem;
+  }
+  
+  .intro-couple {
+    font-size: 2.2rem;
+  }
+  
+  .intro-parents-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .intro-heading {
+    font-size: 2.3rem;
+  }
+  
+  .parent-names {
+    font-size: 2rem; /* Increased from 1.8rem */
+  }
+  
+  .parent-surname {
+    font-size: 2.2rem; /* Increased from 2rem */
+  }
+  
+  .family-names {
+    font-size: 2rem; /* Increased from 1.8rem */
+  }
+  
+  .parents-container, .godparents-container {
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  p {
+    font-size: 1.1rem; /* Adjusted for small mobile */
+  }
+  
+  .detail-box p {
+    font-size: 1.2rem; /* Adjusted for small mobile */
+  }
+  
+  .countdown-box {
+    min-width: 80px;
+    padding: 12px 8px;
+  }
+  
+  .countdown-value {
+    font-size: 2.2rem;
+  }
+  
+  .countdown-label {
+    font-size: 1rem;
+  }
+}
+
+.hidden {
+  display: none;
+}
